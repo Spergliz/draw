@@ -6,4 +6,4 @@ to do list
 - [ ] eraser ( change thing to white lol 
 - [ ] try not to fail too hard 
 - [ ] add a colour picker tool (probably unrealistic)
-- [ ] dont freak out over this project
+- [ ]  <del>dont freak out over this project</del>
