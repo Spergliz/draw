@@ -1,9 +1,9 @@
 # draw
 
 to do list
-- [ ] line drawer
+- [X] line drawer
 - [ ] cricle stamp thing
 - [ ] eraser ( change thing to white lol 
-- [ ] try not to fail too hard 
+- [ ]<del> try not to fail too hard </del>
 - [ ] add a colour picker tool (probably unrealistic)
 - [ ]  <del>dont freak out over this project</del>
