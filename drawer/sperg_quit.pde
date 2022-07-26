@@ -1,3 +1,0 @@
-//global
-
-void Quitlol(){}

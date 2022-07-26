@@ -6,6 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 float drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight, drawingDiameter;
+float buttonX1, buttonY1,button1width,button1height;
 boolean draw=false;
 Minim minim;
 AudioPlayer song1;
@@ -27,10 +28,22 @@ void setup() {
   drawingSurfaceHeight = height*3/5;
   drawingDiameter = width*1/100;
   //
-  rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);}
+  buttonX1 = width*9/10;
+  buttonY1 = height*0;
+  button1width = width*1/4;
+  button1height=height*1/7;
+  
+  //
+  rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
+
+rect(buttonX1, buttonY1, button1width,button1height);
+  
+}
+  
 
 void draw()
 {  
+  
  if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight) line (mouseX, mouseY, pmouseX, pmouseY); }
 
 void mousePressed() {
