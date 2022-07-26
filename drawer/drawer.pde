@@ -7,9 +7,14 @@ import ddf.minim.ugens.*;
 
 float drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight, drawingDiameter;
 boolean draw=false;
+Minim minim;
+AudioPlayer song1;
 //global
 
+  
 void setup() { 
+  minim = new Minim (this);
+  song1= minim.loadFile("Appasayo.mp3");
   //display check
   //display ori
   //display and paper check
@@ -22,8 +27,7 @@ void setup() {
   drawingSurfaceHeight = height*3/5;
   drawingDiameter = width*1/100;
   //
-  rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
-}
+  rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);}
 
 void draw()
 {  
@@ -39,6 +43,7 @@ void mousePressed() {
 }
 
 void keyPressed() {
+  if ( key=='b'||key=='B' ) song1.play();
 }
 
 
