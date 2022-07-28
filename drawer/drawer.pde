@@ -1,4 +1,5 @@
 //shit, the text stuff wasnt worth it, shoulda done imgs from the start, whatever ima just switch it up and hope this shit works, code is so messy 
+//let the record show, i was gonna add a loop, but for some unknown reason it just wouldnt work, so no loop lol. 
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -104,8 +105,8 @@ void setup() {
   imageHeight6= height*1/6;
   imageX7 =width*4/8;
   imageY7=height*6/8;
-  ImageWidth7= width*1/6;
-  imageHeight7= height*1/6;
+  ImageWidth7= width*1/8;
+  imageHeight7= height*1/7;
 
   //
   rect(buttonX1, buttonY1, button1width, button1height);
@@ -121,29 +122,11 @@ void setup() {
   image(pic1, imageX4, imageY4, ImageWidth4, imageHeight4);
   image(pic2, imageX5, imageY5, ImageWidth5, imageHeight5);
   image(pic3, imageX6, imageY6, ImageWidth6, imageHeight6);
-  image(pic4, imageX7, imageY7, ImageWidth7, imageHeight7);
 }//end of setup
 
 
-void draw() 
-
-  //drawer
-{  
-  if (mouseButton== LEFT) {
-    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight) line (mouseX, mouseY, pmouseX, pmouseY);
-  }
-
-  if (mouseButton==RIGHT) {
-    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight) ellipse (mouseX, mouseY, width*1/50, width*1/50);
-  }
-  if (mouseButton==CENTER) { 
-    rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
-    fill(white);
-  }
-}
-//end of draw
-
-void mousePressed() {
+void draw() {
+if(mouseButton== LEFT){
   //sound effect
   if (mouseX>=imageX1 && mouseX<=imageX1+ImageWidth1 && mouseY>=imageY1 && mouseY<=imageY1+imageHeight1)noise1.play();
   if (mouseX>=imageX2 && mouseX<=imageX2+ImageWidth2 && mouseY>=imageY2 && mouseY<=imageY2+imageHeight2)noise1.play();
@@ -164,8 +147,28 @@ if (mouseX>=imageX6 && mouseX<=imageX6+ImageWidth6 && mouseY>=imageY6 && mouseY<
     song1.rewind();
   }else{
     song1.play();}
-if (mouseX>=imageX7 && mouseX<=imageX7+ImageWidth7 && mouseY>=imageY7 && mouseY<=imageY7+imageHeight7)song1.loop(99);
-//i cant remember what this is but its proably imporant 
+    }
+  }
+}
+  //drawer
+{  
+  if (mouseButton== LEFT) {
+    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight) line (mouseX, mouseY, pmouseX, pmouseY);
+  }
+
+  if (mouseButton==RIGHT) {
+    if ( draw == true && mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight) ellipse (mouseX, mouseY, width*1/50, width*1/50);
+  }
+  if (mouseButton==CENTER) { 
+    rect(drawingSurfaceX, drawingsurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
+    fill(white);
+  }
+}
+}
+//end of draw
+
+void mousePressed() {
+  //this makes it so i can write lol 
     if ( mouseX>drawingSurfaceX && mouseX<drawingSurfaceX+drawingSurfaceWidth && mouseY>drawingsurfaceY && mouseY<drawingsurfaceY+drawingSurfaceHeight ) {
       if ( draw == true ) {
         draw=false;
@@ -173,12 +176,11 @@ if (mouseX>=imageX7 && mouseX<=imageX7+ImageWidth7 && mouseY>=imageY7 && mouseY<
         draw = true;
       }
     }
-  }
-}
 }// end of mouse
 
 void keyPressed() {
   if ( key=='b'||key=='B' ) song1.play();
+   if ( key =='p'||key =='P') song1.loop();
 }
 
 
